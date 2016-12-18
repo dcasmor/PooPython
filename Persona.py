@@ -53,7 +53,7 @@ class Persona:
     def tostring(self):
         print(self.nombre, self.edad, self.dni, self.sexo, self.peso, self.altura)
 
-    def generadni(self):
+    def generadni(self, dni):
         self.dni = dni
 
     def setnombre(self, nombre):
@@ -63,7 +63,7 @@ class Persona:
         self.edad = edad
 
     def setsexo(self, sexo):
-        introducirsexo(sexo)
+        self.introducirsexo(sexo)
 
     def setPeso(self, peso):
         self.peso = peso
