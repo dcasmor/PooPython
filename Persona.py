@@ -1,72 +1,96 @@
 class Persona:
-
-    __nombre = ""
-    __edad = 0
-    __DNI = 0
-    __sexo = 'M'
-    __peso = 0
-    __altura = 0
-
     def __init__(self):
-        self.__nombre = ""
-        self.__edad = 0
-        self.__dni = ""
-        self.__sexo = "M"
-        self.__peso = 0
-        self.__altura = 0
+        self.nombre = ""
+        self.edad = 0
+        self.dni = ""
+        self.sexo = "M"
+        self.peso = 0
+        self.altura = 0
         self.generarDni()
 
     def __init__(self, nombre="", edad=0, sexo="M"):
-        self.__nombre = nombre
-        self.__edad = edad
-        self.__sexo = sexo
-        self.__dni = ""
-        self.__sexo = "M"
-        self.__peso = 0
-        self.__altura = 0
+        self.nombre = nombre
+        self.edad = edad
+        self.sexo = sexo
+        self.dni = ""
+        self.sexo = "M"
+        self.peso = 0
+        self.altura = 0
         self.generarDni()
         self.comprobarSexo(self.sexo)
 
-    def __init__(self, nombre, edad, dni, sexo, peso, altura):
-        this.nombre = nombre
+    def __init__(self, nombre="", edad=0, sexo="M", peso=0, altura=0):
+        self.nombre = nombre
+        self.edad = edad
+        self.sexo = sexo
+        self.dni = ""
+        self.sexo = sexo
+        self.peso = peso
+        self.altura = altura
+        self.generarDni()
+        self.comprobarSexo(self.sexo)
 
     def calcularimc(self):
-        imc = peso/(altura**2)
-        if imc>=20 & imc<=25:
-            return 0
-        if imc < 20:
-            return -1
-        else:
-            return 1
+        if float(self.altura) != 0:
+            imc = int(self.peso)/(self.altura**2)
+            if imc >= 20 & imc <= 25:
+                return 0
+            if imc < 20:
+                return -1
+            else:
+                return 1
 
-    def esMayorDeEdad(self):
-        if edad >= 18:
+    def esmayordeedad(self):
+        if int(self.edad) >= 18:
             return True
         else:
             return False
 
-    def introducirSexo(self, sexo):
+    def introducirsexo(self, sexo):
         if sexo != "H" | sexo != "M":
             self.sexo = "M"
 
-    def toString(self):
-        print(nombre, edad, dni, sexo, peso, altura)
+    def tostring(self):
+        print(self.nombre, self.edad, self.dni, self.sexo, self.peso, self.altura)
 
-    def generaDni(self):
-        this.dni = dni
+    def generadni(self):
+        self.dni = dni
 
-    def setNombre(self, nombre):
-        this.nombre = nombre
+    def setnombre(self, nombre):
+        self.nombre = nombre
 
-    def setEdad(self, edad):
-        this.edad = edad
+    def setedad(self, edad):
+        self.edad = edad
 
-    def setSexo(self, sexo):
-        introducirSexo(sexo)
+    def setsexo(self, sexo):
+        introducirsexo(sexo)
 
     def setPeso(self, peso):
-        this.peso = peso
+        self.peso = peso
 
-    def setAltura(self, altura):
-        this.altura = altura
+    def setaltura(self, altura):
+        self.altura = altura
+
+class Main:
+    nombre = input("Nombre: ")
+    edad = input("Edad: ")
+    sexo = input("Sexo: ")
+    peso = input("Peso: ")
+    altura = input("Altura (en metros): ")
+    p1 = Persona(nombre, edad, sexo, peso, altura)
+    p2 = Persona(nombre, edad, sexo)
+    p3 = Persona()
+    p3.setnombre(nombre)
+    p3.setedad(edad)
+    p3.setsexo(sexo)
+    p3.introducirsexo()
+    p3.setPeso(peso)
+    p3.setaltura(altura)
+    p1.esmayordeedad()
+    p2.esmayordeedad()
+    p3.esmayordeedad()
+    p1.imprimir()
+
+
+Main()
 
