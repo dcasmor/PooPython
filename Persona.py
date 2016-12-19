@@ -1,3 +1,5 @@
+import random
+
 class Persona:
     def __init__(self):
         self.nombre = ""
@@ -6,7 +8,7 @@ class Persona:
         self.sexo = "M"
         self.peso = 0
         self.altura = 0
-        self.generarDni()
+        self.generardni()
 
     def __init__(self, nombre="", edad=0, sexo="M"):
         self.nombre = nombre
@@ -16,8 +18,8 @@ class Persona:
         self.sexo = "M"
         self.peso = 0
         self.altura = 0
-        self.generarDni()
-        self.comprobarSexo(self.sexo)
+        self.generardni()
+        self.comprobarsexo(self.sexo)
 
     def __init__(self, nombre="", edad=0, sexo="M", peso=0, altura=0):
         self.nombre = nombre
@@ -27,8 +29,8 @@ class Persona:
         self.sexo = sexo
         self.peso = peso
         self.altura = altura
-        self.generarDni()
-        self.comprobarSexo(self.sexo)
+        self.generardni()
+        self.comprobarsexo(self.sexo)
 
     def calcularimc(self):
         if float(self.altura) != 0:
@@ -53,8 +55,14 @@ class Persona:
     def tostring(self):
         print(self.nombre, self.edad, self.dni, self.sexo, self.peso, self.altura)
 
-    def generadni(self, dni):
-        self.dni = dni
+    def generadni(self):
+        dni = {}
+        for x in range(9):
+            dni[x] = random.randint(0, 9)
+
+        dni[10] = random.choice("A", "B")
+        print(dni)
+
 
     def setnombre(self, nombre):
         self.nombre = nombre
