@@ -106,4 +106,47 @@ class Main:
 
     e1 = Lavadora()
     e1.preciofinal()
-    print("Lavadora: ")
+    print("Lavadora 1: ")
+    e1.imprimir()
+
+    e2 = Lavadora(400, 200)
+    e2.preciofinal()
+    print("Lavadora 2: ")
+    e2.imprimir()
+
+    e3 = Lavadora(10, 500, "gris", "D", 200)
+    e3.preciofinal()
+    print("Lavadora 3: ")
+    e3.imprimir()
+
+    print("Precio de las lavadoras: ", e1.getprecio() + e2.getprecio() + e3.getprecio())
+
+    e4 = Television()
+    e4.preciofinal()
+    print("Television 1: ")
+    e4.imprimir()
+
+    e5 = Television()
+    e5.preciofinal()
+    print("Television 2: ")
+    e5.imprimir()
+
+    e6 = Television()
+    e6.preciofinal()
+    print("Television 3: ")
+    e6.imprimir()
+
+    print("Precio de las televisiones: ", e5.getprecio() + e6.getprecio() + e7.getprecio())
+
+
+
+
+
+
+
+
+
+
+
+
+
