@@ -126,12 +126,12 @@ class Main:
     print("Television 1: ")
     e4.imprimir()
 
-    e5 = Television()
+    e5 = Television(600, 50)
     e5.preciofinal()
     print("Television 2: ")
     e5.imprimir()
 
-    e6 = Television()
+    e6 = Television(60, True, 800, "negro", "C,", 100)
     e6.preciofinal()
     print("Television 3: ")
     e6.imprimir()
