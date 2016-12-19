@@ -58,4 +58,22 @@ class Electrodomestico:
 class Lavadora(Electrodomestico):
 
     def __init__(self, carga=5, precio=100, color="blanco", consumo="F", peso=5):
+        self.carga = carga
+        Electrodomestico.__init__(self, precio, color, consumo, peso)
+
+    def getcarga(self):
+        return self.carga
+
+    def preciofinal(self):
+        Electrodomestico.preciofinal(self)
+        if self.carga > 30:
+            self.precio += 50
+
+    def imprimir(self):
+        print("Carga: ", self.carga)
+        Electrodomestico.imprimir(self)
+
+class Television(Electrodomestico):
+
+    def __init__(self, resolucion=20, fourK=False, precio=100, color="blanco", consumo="F", peso=5):
 
