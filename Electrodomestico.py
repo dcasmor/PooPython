@@ -19,11 +19,11 @@ class Electrodomestico:
         return self.peso
 
     def comprobarconsumo(self, letra):
-        if letra != "A" and letra != "B" and letra != "C" and letra != "D" and letra "E":
+        if letra != "A" and letra != "B" and letra != "C" and letra != "D" and letra != "E":
             self.consumo = "F"
 
     def comprobarcolor(self, color):
-        if color != "negro" and color != "gris"
+        if color != "negro" and color != "gris":
             self.color = "blanco"
 
     def preciofinal(self):
