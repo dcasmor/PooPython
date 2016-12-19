@@ -136,7 +136,27 @@ class Main:
     print("Television 3: ")
     e6.imprimir()
 
-    print("Precio de las televisiones: ", e5.getprecio() + e6.getprecio() + e7.getprecio())
+    print("Precio de las televisiones: ", e4.getprecio() + e5.getprecio() + e6.getprecio())
+
+    e7 = Electrodomestico()
+    e7.preciofinal()
+    print("Electrodomestico 1: ")
+    e7.imprimir()
+
+    e8 = Electrodomestico(200, 50)
+    e8.preciofinal()
+    print("Electrodomestico 1: ")
+    e8.imprimir()
+
+    e9 = Electrodomestico(400, "negro", "B", 100)
+    e9.preciofinal()
+    print("Electrodomestico 1: ")
+    e9.imprimir()
+
+    print("Precio de los electrodomesticos: ", e1.getprecio() + e2.getprecio() + e3.getprecio() + e4.getprecio() +
+          e5.getprecio() + e6.getprecio() + e7.getprecio() + e8.getprecio() + e9.getprecio())
+
+Main()
 
 
 
