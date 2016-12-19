@@ -50,10 +50,10 @@ class Electrodomestico:
             self.precio += 100
 
     def imprimir(self):
-        print("Precio: " + self.precio)
-        print("Color: " + self.color)
-        print("Consumo: " + self.consumo)
-        print("Peso: " + self.peso)
+        print("Precio: " + str(self.precio))
+        print("Color: " + str(self.color))
+        print("Consumo: " + str(self.consumo))
+        print("Peso: " + str(self.peso))
 
 class Lavadora(Electrodomestico):
 
