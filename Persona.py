@@ -13,14 +13,17 @@ class Persona:
         self.generadni()
         self.introducirsexo(self.sexo)
 
-    def calcularimc(self):
+    def calcularimc(self, peso, altura):
         if float(self.altura) != 0:
-            imc = int(self.peso)/(self.altura**2)
-            if imc >= 20 & imc <= 25:
+            imc = int(self.peso)/(float(self.altura)**2)
+            if imc in (20, 25):
+                print ("Está en su peso ideal")
                 return 0
             if imc < 20:
+                print("Infrapeso")
                 return -1
             else:
+                print("Sobrepeso")
                 return 1
 
     def esmayordeedad(self):
@@ -35,16 +38,14 @@ class Persona:
         else:
             self.sexo = "Mujer"
 
-    def tostring(self):
-        print(self.nombre, self.edad, self.dni, self.sexo, self.peso, self.altura)
-
     def generadni(self):
         dni = {}
         for x in range(8):
             dni[x] = random.randint(0, 9)
 
-        dni[9] = random.choice("A" "B" "C" "D" "E" "F" "G")
-        print(dni)
+        dni[9] = random.choice("A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N"
+                               "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z")
+        self.dni = dni
 
 
     def setnombre(self, nombre):
@@ -63,7 +64,13 @@ class Persona:
         self.altura = altura
 
     def imprimir(self):
-        print(self.nombre, self.edad, self.sexo, self.peso, self.altura)
+        print("Nombre:", self.nombre)
+        print("Edad: ", self.edad)
+        print("DNI: ", self.dni)
+        print("Sexo: ", self.sexo)
+        print("Peso:", self.peso)
+        print("Altura: ", self.altura)
+        self.calcularimc(self.peso, self.altura)
 
 class Main:
     nombre = input("Nombre: ")
@@ -84,8 +91,6 @@ class Main:
     p2.esmayordeedad()
     p3.esmayordeedad()
     p1.imprimir()
-    p2.imprimir()
-    p3.imprimir()
 
 Main()
 
