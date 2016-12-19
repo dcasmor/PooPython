@@ -76,4 +76,34 @@ class Lavadora(Electrodomestico):
 class Television(Electrodomestico):
 
     def __init__(self, resolucion=20, fourK=False, precio=100, color="blanco", consumo="F", peso=5):
+        self.resolucion = resolucion
+        self.fourK = fourK
+        Electrodomestico.__init__(self, precio, color, consumo, peso)
 
+    def getresolucion(self):
+        return self.resolucion
+
+    def gettdt(self):
+        return self.fourK
+
+    def preciofinal(self):
+        Electrodomestico.preciofinal(self)
+        if self.fourK:
+            self.precio += 50
+
+        if self.resolucion > 40:
+            self.precio *= 1.3
+
+        def imprimir(self):
+            print("Resolucion: ", self.resolucion)
+            if self.fourK:
+                print("Listo para 4K")
+            else:
+                print("No tiene 4K")
+            Electrodomestico.imprimir(self)
+
+class Main:
+
+    e1 = Lavadora()
+    e1.preciofinal()
+    print("Lavadora: ")
