@@ -1,25 +1,6 @@
 import random
 
 class Persona:
-    def __init__(self):
-        self.nombre = ""
-        self.edad = 0
-        self.dni = ""
-        self.sexo = "M"
-        self.peso = 0
-        self.altura = 0
-        self.generardni()
-
-    def __init__(self, nombre="", edad=0, sexo="M"):
-        self.nombre = nombre
-        self.edad = edad
-        self.sexo = sexo
-        self.dni = ""
-        self.sexo = "M"
-        self.peso = 0
-        self.altura = 0
-        self.generardni()
-        self.comprobarsexo(self.sexo)
 
     def __init__(self, nombre="", edad=0, sexo="M", peso=0, altura=0):
         self.nombre = nombre
@@ -29,8 +10,8 @@ class Persona:
         self.sexo = sexo
         self.peso = peso
         self.altura = altura
-        self.generardni()
-        self.comprobarsexo(self.sexo)
+        self.generadni()
+        self.introducirsexo(self.sexo)
 
     def calcularimc(self):
         if float(self.altura) != 0:
@@ -49,18 +30,20 @@ class Persona:
             return False
 
     def introducirsexo(self, sexo):
-        if sexo != "H" | sexo != "M":
-            self.sexo = "M"
+        if sexo == "H":
+            self.sexo = "Hombre"
+        else:
+            self.sexo = "Mujer"
 
     def tostring(self):
         print(self.nombre, self.edad, self.dni, self.sexo, self.peso, self.altura)
 
     def generadni(self):
         dni = {}
-        for x in range(9):
+        for x in range(8):
             dni[x] = random.randint(0, 9)
 
-        dni[10] = random.choice("A", "B")
+        dni[9] = random.choice("A" "B" "C" "D" "E" "F" "G")
         print(dni)
 
 
@@ -79,6 +62,9 @@ class Persona:
     def setaltura(self, altura):
         self.altura = altura
 
+    def imprimir(self):
+        print(self.nombre, self.edad, self.sexo, self.peso, self.altura)
+
 class Main:
     nombre = input("Nombre: ")
     edad = input("Edad: ")
@@ -91,14 +77,15 @@ class Main:
     p3.setnombre(nombre)
     p3.setedad(edad)
     p3.setsexo(sexo)
-    p3.introducirsexo()
+    #p3.introducirsexo()
     p3.setPeso(peso)
     p3.setaltura(altura)
     p1.esmayordeedad()
     p2.esmayordeedad()
     p3.esmayordeedad()
     p1.imprimir()
-
+    p2.imprimir()
+    p3.imprimir()
 
 Main()
 
