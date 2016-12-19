@@ -111,49 +111,49 @@ class Main:
 
     e2 = Lavadora(400, 200)
     e2.preciofinal()
-    print("Lavadora 2: ")
+    print("\nLavadora 2: ")
     e2.imprimir()
 
     e3 = Lavadora(10, 500, "gris", "D", 200)
     e3.preciofinal()
-    print("Lavadora 3: ")
+    print("\nLavadora 3: ")
     e3.imprimir()
 
-    print("Precio de las lavadoras: ", e1.getprecio() + e2.getprecio() + e3.getprecio())
+    print("\nPrecio de las lavadoras: ", e1.getprecio() + e2.getprecio() + e3.getprecio())
 
     e4 = Television()
     e4.preciofinal()
-    print("Television 1: ")
+    print("\nTelevision 1: ")
     e4.imprimir()
 
     e5 = Television(600, 50)
     e5.preciofinal()
-    print("Television 2: ")
+    print("\nTelevision 2: ")
     e5.imprimir()
 
     e6 = Television(60, True, 800, "negro", "C,", 100)
     e6.preciofinal()
-    print("Television 3: ")
+    print("\nTelevision 3: ")
     e6.imprimir()
 
-    print("Precio de las televisiones: ", e4.getprecio() + e5.getprecio() + e6.getprecio())
+    print("\nPrecio de las televisiones: ", e4.getprecio() + e5.getprecio() + e6.getprecio())
 
     e7 = Electrodomestico()
     e7.preciofinal()
-    print("Electrodomestico 1: ")
+    print("\nElectrodomestico 1: ")
     e7.imprimir()
 
     e8 = Electrodomestico(200, 50)
     e8.preciofinal()
-    print("Electrodomestico 1: ")
+    print("\nElectrodomestico 1: ")
     e8.imprimir()
 
     e9 = Electrodomestico(400, "negro", "B", 100)
     e9.preciofinal()
-    print("Electrodomestico 1: ")
+    print("\nElectrodomestico 1: ")
     e9.imprimir()
 
-    print("Precio de los electrodomesticos: ", e1.getprecio() + e2.getprecio() + e3.getprecio() + e4.getprecio() +
+    print("\nPrecio de los electrodomesticos: ", e1.getprecio() + e2.getprecio() + e3.getprecio() + e4.getprecio() +
           e5.getprecio() + e6.getprecio() + e7.getprecio() + e8.getprecio() + e9.getprecio())
 
 Main()
